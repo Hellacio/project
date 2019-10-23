@@ -4,7 +4,7 @@ This project is for Big Data and Cloud Computing courses. The goal of the projec
 ## Requirements
 ### Terraform
 Download the Terraform version from [HERE!](https://www.terraform.io/downloads.html)
-(Tested on Terraform 0.12.10)
+(Tested on Terraform 0.12.10 and 0.12.12)
 ### Google Cloud account
 You can activate one on your normal google account from [HERE!](https://console.cloud.google.com/)
 ### Project on Google Cloud
@@ -13,10 +13,10 @@ You can activate one on your normal google account from [HERE!](https://console.
 [HOWTO](https://cloud.google.com/service-usage/docs/enable-disable)
 ### Create account.json
 [HOWTO](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)
-Get the json format key for the google cloud project you want to use, and rename it account.json
+Get the json format key for the google cloud project you want to use, and rename it to _account.json_
 ### Create ssh keys
 [HOWTO](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-for our project name the public key to: id_rsa.pub
+Get the public key for our project and rename it to _id_rsa.pub_
 
 ## To provision
 1. Clone the repository
