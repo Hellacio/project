@@ -16,8 +16,4 @@ resource "null_resource" "cmd" {
   triggers = {
     template_rendered = "${data.template_file.inventory.rendered}"
   }
-
-  provisioner "local-exec" {
-    command = "echo '${data.template_file.inventory.rendered}' > ../ansible/inventory"
-  }
 }
