@@ -30,13 +30,13 @@ services:
     volumes:
       - influxdb-volume:/var/lib/grafana
 
-configs:
-  telegraf.conf:
-    file: ./telegraf/telegraf.conf
-  influxdb.conf:
-    file: ./influxdb/influxdb.conf
-  telegraf-datasources.conf:
-    file: ./grafana/provisioning/datasources/all.yml
+#configs:
+#  telegraf.conf:
+#    file: ./telegraf/telegraf.conf
+#  influxdb.conf:
+#    file: ./influxdb/influxdb.conf
+#  telegraf-datasources.conf:
+#    file: ./grafana/provisioning/datasources/all.yml
 
 volumes:
     telegraf-volume:
