@@ -20,9 +20,9 @@ Get the public key for our project and rename it to _id_rsa.pub_
 
 ## To provision
 1. Clone the repository
-2. Move account.json file to the *project* folder (this is used to provision to the correct google cloud project) NOTE: NEVER EVER COMMIT THIS FILE AS IT CAN BE USED TO PROVISION STUFF IN YOUR NAME
+2. Move account.json file to the *project* folder (this is used to provision to the correct google cloud project) **NOTE: NEVER EVER COMMIT THIS FILE AS IT CAN BE USED TO PROVISION STUFF IN YOUR NAME**
 3. In variables.tf change the variable project to correspond your own google cloud project name.
-4. Move your id_rsa.pub and id_rsa ssh keys to the *project* folder (this is used to ssh to the created Compute Engine machines) NOTE: NEVER EVER COMMIT THESE FILES AS THEY CAN BE USED TO ACCESS YOUR MACHINES
+4. Move your id_rsa.pub and id_rsa ssh keys to the *project* folder (this is used to ssh to the created Compute Engine machines) NOTE: **NEVER EVER COMMIT THESE FILES AS THEY CAN BE USED TO ACCESS YOUR MACHINES**
 5. Go to the *project* folder on command prompt / terminal
 6. Command: _terraform init_
 7. To make sure everything as you plan: 
