@@ -30,6 +30,7 @@ resource "google_compute_instance" "managers" {
       "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -",
       "sudo add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable\"",
       "sudo apt-get update",
+      "sudo apt-get -y install jq",
       "sudo apt-get -y install docker-ce",
       "sudo apt-get -y install docker-ce-cli", 
       "sudo apt-get -y install containerd.io",
@@ -44,13 +45,5 @@ resource "google_compute_instance" "managers" {
       user = "${var.ssh_user}"
       private_key = "${file("id_rsa")}"
     }
-  }
-}
-data "external" "swarm_tokens" {
-  program = ["fetch_tokens.sh"]
-
-  query = {
-    host = "${google_compute_instance.workers.0.network_interface.0.access_config.0.nat_ip}"
-    user = "${var.ssh_user}"
   }
 }

@@ -1,3 +1,14 @@
+# data "external" "swarm_tokens" {
+#  program = ["./fetch_tokens.sh"]
+#  query = {
+#    host = "${google_compute_instance.managers.0.network_interface.0.access_config.0.nat_ip}"
+#    user = "${var.ssh_user}"
+#    private_key = "${file("id_rsa")}"
+#  }
+#  depends_on = [google_compute_instance.managers]
+# }
+
+
 resource "google_compute_instance" "workers" {
   count        = "${var.swarm_workers}"
   name         = "worker${count.index + 1}"
@@ -32,14 +43,15 @@ resource "google_compute_instance" "workers" {
       "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -",
       "sudo add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable\"",
       "sudo apt-get update",
+      "sudo apt-get -y install jq",
       "sudo apt-get -y install docker-ce",
       "sudo apt-get -y install docker-ce-cli", 
       "sudo apt-get -y install containerd.io",
       "sudo usermod -aG docker ubuntu",
       "sudo curl -L \"https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose",
       "sudo chmod +x /usr/local/bin/docker-compose",
-      "echo ${google_compute_instance.managers.0.network_interface.0.network_ip}:2377",
-      "sudo docker swarm join --token ${data.external.swarm_tokens.result.worker} ${google_compute_instance.managers.0.network_interface.0.network_ip}:2377"
+      "echo ${google_compute_instance.managers.0.network_interface.0.network_ip}:2377"
+ #     "sudo docker swarm join --token ${data.external.swarm_tokens.result.worker} ${google_compute_instance.managers.0.network_interface.0.network_ip}:2377"
     ]
     connection  {
       host = "${google_compute_instance.workers.0.network_interface.0.access_config.0.nat_ip}"
