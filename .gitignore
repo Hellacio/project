@@ -1,1 +1,22 @@
-test
+### Terraform ###
+
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+
+### Others ###
+account.json
+id_rsa.pub
