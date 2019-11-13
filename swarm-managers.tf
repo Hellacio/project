@@ -12,7 +12,7 @@ resource "google_compute_instance" "managers" {
   }
 
   metadata = {
-    sshKeys = "${var.ssh_user}:${file("id_rsa.pub")}"
+    sshKeys = "${var.ssh_user}:${file("gcloud_id_rsa.pub")}"
   }
 
   network_interface  {
@@ -43,7 +43,7 @@ resource "google_compute_instance" "managers" {
     connection  {
       host = "${google_compute_instance.managers.0.network_interface.0.access_config.0.nat_ip}"
       user = "${var.ssh_user}"
-      private_key = "${file("id_rsa")}"
+      private_key = "${file("gcloud_id_rsa")}"
     }
   }
 }

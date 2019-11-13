@@ -13,19 +13,19 @@ You can activate one on your normal google account from [HERE!](https://console.
 [HOWTO](https://cloud.google.com/service-usage/docs/enable-disable)
 ### Create account.json
 [HOWTO](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)
-Get the json format key for the google cloud project you want to use, and rename it to _account.json_
+Get the json format key for the google cloud project you want to use, and name it to "account.json"
 ### Create ssh keys
 [HOWTO](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-Get the public key for our project and rename it to _id_rsa.pub_
+Get the public key for our project and name it to "gcloud_id_rsa.pub"
 
 ## To provision
 1. Clone the repository
 2. Move account.json file to the *project* folder (this is used to provision to the correct google cloud project) **NOTE: NEVER EVER COMMIT THIS FILE AS IT CAN BE USED TO PROVISION STUFF IN YOUR NAME**
 3. In variables.tf change the variable project to correspond your own google cloud project name.
-4. Move your id_rsa.pub and id_rsa ssh keys to the *project* folder (this is used to ssh to the created Compute Engine machines) NOTE: **NEVER EVER COMMIT THESE FILES AS THEY CAN BE USED TO ACCESS YOUR MACHINES**
+4. Move your gcloud_id_rsa.pub and gcloud_id_rsa ssh keys to the *project* folder (this is used to ssh to the created Compute Engine machines) NOTE: **NEVER EVER COMMIT THESE FILES AS THEY CAN BE USED TO ACCESS YOUR MACHINES**
 5. Go to the *project* folder on command prompt / terminal
-6. Command: _terraform init_
+6. Command: "terraform init"
 7. To make sure everything as you plan: 
-   Command: _terraform plan_
+   Command: "terraform plan"
 8. To provision:
-   Command: _terraform apply_
+   Command: "terraform apply"
