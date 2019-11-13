@@ -1,1 +1,7 @@
-test
+id_rsa
+gcloud_id_rsa
+.terraform/
+.DS_Store
+account.json
+terraform.tfstate
+terraform.tfstate.backup
