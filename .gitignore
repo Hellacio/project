@@ -1,5 +1,7 @@
 id_rsa
 gcloud_id_rsa
+id_rsa.pub
+gcloud_id_rsa.pub
 .terraform/
 .DS_Store
 account.json
