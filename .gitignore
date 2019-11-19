@@ -19,4 +19,7 @@ crash.log
 
 ### Others ###
 account.json
+id_rsa
 id_rsa.pub
+gcloud_id_rsa
+gcloud_id_rsa.pub
