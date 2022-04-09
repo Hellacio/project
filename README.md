@@ -24,8 +24,8 @@ Get the public key for our project and name it to "gcloud_id_rsa.pub"
 3. In variables.tf change the variable project to correspond your own google cloud project name.
 4. Move your gcloud_id_rsa.pub and gcloud_id_rsa ssh keys to the *project* folder (this is used to ssh to the created Compute Engine machines) NOTE: **NEVER EVER COMMIT THESE FILES AS THEY CAN BE USED TO ACCESS YOUR MACHINES**
 5. Go to the *project* folder on command prompt / terminal
-6. Command: "terraform init"
+6. Command: `terraform init`
 7. To make sure everything as you plan: 
-   Command: "terraform plan"
+   Command: `terraform plan`
 8. To provision:
-   Command: "terraform apply"
+   Command:`terraform apply`
